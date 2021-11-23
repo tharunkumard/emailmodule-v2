@@ -34,9 +34,15 @@ app.get('/email', (req, res) => {
     var from = "emailmoduledemo@gmail.com";
     var to = req.query.to;
     var subject = "Appointment Booking Successful";
+    var docname = req.query.docname;
+    var gmeetid = req.query.gmeetid;
+    var meettime = req.query.meettime;
+    var meetdate = req.query.meetdate;
     var generateTextFromHTML = true;
     //var html = req.query.html;
-    var html = "Your appointment is booked";
+    //var html = "Your appointment is booked";
+    var html = `Your appointment is successfully booked with ` + docname + ` Join the meet link ` + gmeetid + `at the time `+ meettime + ` on `+ meetdate ;
+
     const mailOptions = {
       from:from,
       to:to,
